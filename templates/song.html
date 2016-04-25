@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}  Worst Songs List: Song Information for {{ song }} {% endblock %}
+
+
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="/static/css/mystyle.css">
+{% endblock %}
+
+
+
+{% block navbar %}
+  <div class="navbar navbar-fixed-top">
+    {{nav.mynavbar.render()}}
+  </div>
+{% endblock %}
+
+
+
+{% block content %}
+  <div id="container">
+
+  <div class="text">
+  <h1>{{ song }}</h1>
+
+  <p><b>Artist Name:</b> {{ artist }}</p>
+  <p><b>Release Year:</b> {{ year }}</p>
+  <p><b>Reason:</b> {{ info }}</p>
+  <p><a href="{{ wiki }}"><b>Wikipedia Link</b></a></p>
+  <!-- <p><a href="{{ youtube }}"><b>YouTube Link</b></a></p> -->
+  </div>
+
+
+  <div id="video"
+  <!-- 4:3 aspect ratio -->
+  <div class="embed-responsive embed-responsive-4by3">
+    <iframe class="embed-responsive-item" width="420" height="315" src="{{ youtube }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+  <br>
+
+
+  <div class="text">
+  <p><a <a href=" {{ url_for('index') }} ">Go back to the full list.</a></p>
+  </div>
+
+  </div> <!-- close the container -->
+{% endblock %}

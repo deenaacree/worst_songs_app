@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title> Worst Songs List: Song Information for {{ song }} </title>
+</head>
+
+<body>
+<div id="container">
+
+<h1>{{ song }}</h1>
+
+<p><b>Artist Name:</b> {{ artist }}</p>
+<p><b>Release Year:</b> {{ year }}</p>
+<p><b>Information:</b> {{ info }}</p>
+<p><a href="{{ wiki }}"><b>Wikipedia Link</b></a></p>
+<p><a href="{{ youtube }}"><b>YouTube Link</b></a></p>
+
+<!-- YouTube video -->
+
+<!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="{{ youtube }}"></iframe>
+</div>
+
+
+<br>
+
+
+<p><a <a href=" {{ url_for('index') }} ">Go back to the full list.</a></p>
+
+</div> <!-- close the container -->
+
+</body>
+</html>
